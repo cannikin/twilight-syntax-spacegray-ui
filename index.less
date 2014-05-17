@@ -1,6 +1,6 @@
 .editor .wrap-guide {
   background-color: #ffffff;
-  opacity: 0.05;
+  opacity: 0.1;
 }
 
 .editor .indent-guide {
@@ -12,16 +12,24 @@
   color: #F8F8F8;
 }
 
-.editor.is-focused .cursor {
-  border-color: #A7A7A7;
-}
-
-.editor.is-focused .selection .region {
-  background-color: rgba(221, 240, 255, 0.2);
-}
-
-.editor.is-focused .line-number.cursor-line-no-selection, .editor.is-focused .line.cursor-line {
-  background-color: rgba(166, 148, 66, 0);
+.editor {
+  .selection .region {
+    background-color: rgba(221, 240, 255, 0.08);
+  }
+  .line-number.cursor-line, .line.cursor-line {
+    background-color: rgba(166, 148, 66, 0.075);
+  }
+  &.is-focused {
+    .cursor {
+      border-color: #A7A7A7;
+    }
+    .selection .region {
+      background-color: rgba(221, 240, 255, 0.2);
+    }
+    .line-number.cursor-line, .line.cursor-line {
+      background-color: rgba(166, 148, 66, 0.1);
+    }
+  }
 }
 
 .comment {
@@ -196,4 +204,16 @@
 
 .markup.heading {
   color: #CF6A4C;
+}
+
+.search-results{
+  .marker{
+    &.current-result .region{
+      background:#550;
+      border:none;
+    }
+    .region{
+      border: 1px solid #770;
+    }
+  }
 }
